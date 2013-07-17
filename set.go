@@ -193,3 +193,11 @@ func (set *Set) String() string {
 	}
 	return fmt.Sprintf("Set{%s}", strings.Join(items, ", "))
 }
+
+func (set *Set) Get() []interface{} {
+	items := make([]interface{}, 0, len(set.set))
+	for key := range set.set {
+		items = append(items, key)
+	}
+	return items
+}
