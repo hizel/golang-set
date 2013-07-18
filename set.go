@@ -201,3 +201,9 @@ func (set *Set) Get() []interface{} {
 	}
 	return items
 }
+
+func (set *Set) Iterate(f func(interface{})) {
+	for key := range set.set {
+		f(key)
+	}
+}

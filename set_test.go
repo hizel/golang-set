@@ -354,6 +354,14 @@ func Test_SetEqual(t *testing.T) {
 	}
 }
 
+func Test_Iterate(t *testing.T) {
+	a := NewSet()
+	a.Add(1)
+	a.Add(2)
+	a.Add(3)
+	a.Iterate(func(k interface{}) {t.Log(k)})
+}
+
 func Test_Example(t *testing.T) {
 	/*
 		requiredClasses := NewSet()
